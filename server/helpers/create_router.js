@@ -32,6 +32,15 @@ createRouter = function(collection) {
         .catch((err) => catchError(err));
     });
 
+    //POST - CREATE - ADD A NEW PLANET
+    router.post('/', (req, res) => {
+        const newData = req.body;
+        collection
+        .insertOne(newData)
+        .then((result)=> res.json(result.ops[0]))
+        .catch((err) => catchError(err));
+    })
+
 
     return router;
 };
