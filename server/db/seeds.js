@@ -8,5 +8,11 @@ db.planets.insertMany([
         planetName: "Earth",
         diameter: 12742
 
+    },
+
+    {
+        planetName: "Venus",
+        diameter: 12104 
+
     }
-]);
+]); 
