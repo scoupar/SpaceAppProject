@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './PlanetsForm.css'
+import image from './image.png';
 
 
 
@@ -82,7 +83,7 @@ const PlanetForm = ({createPlanet}) => {
                 <option value = "https://images.unsplash.com/photo-1560507074-b9eb43faab00?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8cGxhbmV0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Option2</option>
                 <option value = "https://cdnb.artstation.com/p/assets/images/images/017/697/507/large/andrew-gaus-ice-planet-2.jpg?1557001504">Option3</option>
                 <option value = "https://images.unsplash.com/photo-1610970883364-30e1ab2dc48b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjJ8fHBsYW5ldHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Option4</option>
-                <option value = "./gas1.png">Option5</option>
+                <option value = {image}>Option5</option>
                 </select>
                 <input type = "submit" name = "submit" value = "Create New Planet"/>
                 
