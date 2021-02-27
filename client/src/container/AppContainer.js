@@ -48,9 +48,8 @@ const AppContainer = () => {
     return(
         <Router>
         <>
-        <NavBar/>
-    
         <h1>Hello Space!</h1>
+        <NavBar/>
         <Route exact path = "/" render = {() =>
             <Home picture={picture} />
         }/>
