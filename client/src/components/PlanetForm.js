@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './PlanetsForm.css'
 
 
 const PlanetForm = ({createPlanet}) => {
