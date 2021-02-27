@@ -5,6 +5,7 @@ import NavBar from '../components/NavBar';
 import PlanetList from '../components/PlanetList';
 import PlanetService from '../services/PlanetService';
 import PlanetDetail from '../components/PlanetDetail';
+import PlanetForm from '../components/PlanetForm';
 
 
 const AppContainer = () => {
@@ -34,6 +35,13 @@ const AppContainer = () => {
         getPicture()
     },[]);
 
+    const createPlanet = (newPlanet) => {
+        PlanetService.postPlanet(newPlanet)
+        .then((savedPlanet) => {
+            setAllPlanets([...allPlanets, savedPlanet])
+        });
+    };
+
 
     
     return(
@@ -49,6 +57,7 @@ const AppContainer = () => {
         <>
         <PlanetList allPlanets={allPlanets} onPlanetSelect = {handleSelectedPlanet}/>
         <PlanetDetail selectedPlanet = {selectedPlanet}/>
+        <PlanetForm createPlanet = {createPlanet}/>
         </>
         }/>
 

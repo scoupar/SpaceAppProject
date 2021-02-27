@@ -1,11 +1,11 @@
 import React from 'react';
 import PlanetDetail from './PlanetDetail'
 
-const PlanetList = ({allPlanets, selectedPlanet, onPlanetSelect}) => {
+const PlanetList = ({allPlanets, selectedPlanet, onPlanetSelect, createPlanet}) => {
 
     const planetListItems = allPlanets.map((planet, index) =>{
         return (
-            <li onMouseMove = {()=> {onPlanetSelect(planet)}} key={planet.index}><img src ={planet.url} height = "300" width = "300"/></li>
+            <li onMouseMove = {()=> {onPlanetSelect(planet)}} key={planet.index}><img src ={planet.url} height = "250" width = "250"/></li>
     )})
 
 
