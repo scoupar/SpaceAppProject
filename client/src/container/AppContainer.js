@@ -11,12 +11,16 @@ const AppContainer = () => {
 
     const [picture, setPicture] = useState([]);
     const [allPlanets, setAllPlanets] = useState([]);
+    const [selectedPlanet, setSelectedPlanet] = useState(null)
 
     useEffect(() => {
         PlanetService.getPlanets()
         .then(allPlanets => setAllPlanets(allPlanets))
     }, [])
 
+    const handleSelectedPlanet = (selectedPlanet) => {  
+        setSelectedPlanet(selectedPlanet)
+    }
 
     const getPicture = () => {
         console.log('fetching picture...')
@@ -43,8 +47,8 @@ const AppContainer = () => {
         }/>
         <Route exact path = "/planets" render = {() =>
         <>
-        <PlanetList allPlanets={allPlanets}/>
-        <PlanetDetail />
+        <PlanetList allPlanets={allPlanets} onPlanetSelect = {handleSelectedPlanet}/>
+        <PlanetDetail selectedPlanet = {selectedPlanet}/>
         </>
         }/>
 

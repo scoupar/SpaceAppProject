@@ -1,16 +1,17 @@
 import React from 'react';
+import PlanetDetail from './PlanetDetail'
 
-const PlanetList = ({allPlanets}) => {
+const PlanetList = ({allPlanets, selectedPlanet, onPlanetSelect}) => {
 
     const planetListItems = allPlanets.map((planet, index) =>{
         return (
-            <li key={planet.index}><img src ={planet.url}/></li>
+            <li onMouseMove = {()=> {onPlanetSelect(planet)}} key={planet.index}><img src ={planet.url} height = "300" width = "300"/></li>
     )})
 
 
     return(
     <>
-    <ul>
+    <ul className = "planet-list">
         {planetListItems}
     </ul>
     </>
