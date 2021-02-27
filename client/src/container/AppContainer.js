@@ -1,9 +1,21 @@
 import React, {useState, useEffect} from 'react';
-import Home from '../components/Home'
+import Home from '../components/Home';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import NavBar from '../components/NavBar';
+import PlanetList from '../components/PlanetList';
+import PlanetService from '../services/PlanetService';
+import PlanetDetail from '../components/PlanetDetail';
+
 
 const AppContainer = () => {
 
     const [picture, setPicture] = useState([]);
+    const [allPlanets, setAllPlanets] = useState([]);
+
+    useEffect(() => {
+        PlanetService.getPlanets()
+        .then(allPlanets => setAllPlanets(allPlanets))
+    }, [])
 
 
     const getPicture = () => {
@@ -21,10 +33,23 @@ const AppContainer = () => {
 
     
     return(
+        <Router>
         <>
+        <NavBar/>
+    
         <h1>Hello Space!</h1>
-        <Home picture={picture} />
+        <Route exact path = "/" render = {() =>
+            <Home picture={picture} />
+        }/>
+        <Route exact path = "/planets" render = {() =>
+        <>
+        <PlanetList allPlanets={allPlanets}/>
+        <PlanetDetail />
         </>
+        }/>
+
+        </>
+        </Router>
     )
 }
 export default AppContainer;

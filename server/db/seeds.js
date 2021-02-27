@@ -88,7 +88,7 @@ db.planets.insertMany([
         rings: "Yes",
         type: "Ice Giant",
         orbitPeriod: 84.02,
-        url: "https://space-facts.com/wp-content/uploads/uranus.png"
+        url: "https://space-facts.com/wp-content/uploads/uranus.jpg"
 
     }
     
