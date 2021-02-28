@@ -51,16 +51,42 @@ class Quiz extends Component {
 
         }
 
+    checkAnswer = answer => {
+        const{ correctAnswers, step, score } =this.state;
+        if(answer === correctAnswers[step]) {
+            this.setState({
+                score: score + 1,
+                correctAnswer: correctAnswers[step],
+                clickedAnswer: answer
+            });
+        }else {
+            this.setState({
+                correctAnswer: 0,
+                clickedAnswer: answer
+            });
+        }
+
+    }
+
     render () {
-        let { questions, answers, step} = this.state;
+        let { questions, answers, step, correctAnswer, clickedAnswer} = this.state;
 
     return (
     <>
     
     <h1 className="quiz"> Welcome to Space Quiz </h1>
         <div className="content">
-            <Question  question={questions[step]}/>
-            <Answer  answer={answers[step]} step={step}/>
+            <Question  
+            question={questions[step]}
+            />
+            <Answer  
+            answer={answers[step]} 
+            step={step}
+            checkAnswer={this.checkAnswer}
+            correctAnswer={correctAnswer}
+            clickedAnswer={clickedAnswer}
+            
+            />
    
    </div>
     </>
