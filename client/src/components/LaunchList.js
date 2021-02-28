@@ -11,11 +11,7 @@ const LaunchList = ({allLaunches, onLaunchSelect}) => {
         )
     })
 
-    const launchListItems = allLaunches.map((launch, index) => {
-        return(
-            <li key={index}>{launch.name}</li>
-        )
-    })
+
 
     const handleChange = (event) => {
         const foundLaunch = allLaunches.find((launch) => {
@@ -31,9 +27,6 @@ const LaunchList = ({allLaunches, onLaunchSelect}) => {
             {options}
         </select>
 
-        <ul>
-            {launchListItems}
-        </ul>
         </>
     )
 }

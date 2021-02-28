@@ -8,6 +8,7 @@ import PlanetDetail from '../components/PlanetDetail';
 import PlanetForm from '../components/PlanetForm';
 import ErrorPage from '../components/ErrorPage';
 import LaunchList from '../components/LaunchList';
+import LaunchDetail from '../components/LaunchDetail';
 
 
 const AppContainer = () => {
@@ -92,8 +93,13 @@ const AppContainer = () => {
         <PlanetForm createPlanet = {createPlanet}/>
         </>
         }/>
-        <Route exact path = "/launches" render = { () => <LaunchList allLaunches={allLaunches} onLaunchSelect={handleSelectedLaunch}/>}/>
-
+        
+        <Route exact path = "/launches" render = { () => 
+        <>
+        <LaunchList allLaunches={allLaunches} onLaunchSelect={handleSelectedLaunch}/>
+        <LaunchDetail selectedLaunch={selectedLaunch} />
+        </>
+        }/>
         </>
         </Router>
     )
