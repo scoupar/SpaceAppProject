@@ -43,6 +43,12 @@ const AppContainer = () => {
         });
     };
 
+    const deletePlanet = idToDelete => {
+        PlanetService.deletePlanet(idToDelete)
+        .then(() => {
+            setAllPlanets(allPlanets.filter(planet => planet._id !== idToDelete))
+        })
+    }
 
     
     return(
@@ -56,7 +62,7 @@ const AppContainer = () => {
         <Route exact path = "/planets" render = {() =>
         <>
         <PlanetList allPlanets={allPlanets} onPlanetSelect = {handleSelectedPlanet}/>
-        <PlanetDetail selectedPlanet = {selectedPlanet}/>
+        <PlanetDetail selectedPlanet = {selectedPlanet} deletePlanet={deletePlanet}/>
         <PlanetForm createPlanet = {createPlanet}/>
         </>
         }/>
