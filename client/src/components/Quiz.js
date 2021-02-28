@@ -68,14 +68,25 @@ class Quiz extends Component {
 
     }
 
+    nextStep = step => {
+        this.setState({
+            step: step+1, 
+            correctAnswer: 0,
+            clickedAnswer: 0
+
+        });
+    }
+
     render () {
-        let { questions, answers, step, correctAnswer, clickedAnswer} = this.state;
+        let { questions, answers, step, correctAnswer, clickedAnswer, score} = this.state;
 
     return (
     <>
     
     <h1 className="quiz"> Welcome to Space Quiz </h1>
         <div className="content">
+            {step <= Object.keys(questions).length ?
+            ( <>
             <Question  
             question={questions[step]}
             />
@@ -85,20 +96,30 @@ class Quiz extends Component {
             checkAnswer={this.checkAnswer}
             correctAnswer={correctAnswer}
             clickedAnswer={clickedAnswer}
-            
             />
-   
-   </div>
-    </>
-
+            <button
+            className="NextStep"
+            disabled={
+                clickedAnswer && Object.keys(questions).length >= step
+                ? false : true 
+            }
+            onClick={() => this.nextStep(step)}
+            >
+                Next
+            </button>
+            </>) :(
+                <div ClassName="finalPage">
+                    <h> You have completed the Quiz!</h>
+                    <p> Your score is: {score} of {Object.keys(questions).length}</p>
+                    <p>Thank you! </p>
+                </div>
+            )
+         }
+        </div>
+       </>
     
    );
 }
 }
-
-
-
-
- 
 
 export default Quiz;
