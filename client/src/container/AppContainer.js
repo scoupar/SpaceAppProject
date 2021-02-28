@@ -50,6 +50,8 @@ const AppContainer = () => {
 
     useEffect (() => {
         getPicture()
+        getLaunches()
+        getAstronauts()
     },[]);
 
     const createPlanet = (newPlanet) => {
@@ -69,7 +71,7 @@ const AppContainer = () => {
     
     return(
         <Router>
-        <>
+        <>      
         <h1>Hello Space!</h1>
         <NavBar/>
         <Route exact path = "/" render = {() =>
