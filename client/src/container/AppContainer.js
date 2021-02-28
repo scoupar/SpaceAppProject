@@ -41,7 +41,9 @@ const AppContainer = () => {
 
     const getLaunches = () => {
         console.log('fetching launches...')
-        fetch("https://lldev.thespacedevs.com/2.0.0/launch/?format=json&offset=1700")
+        // fetch("https://lldev.thespacedevs.com/2.0.0/launch/?format=json&offset=1700")
+        // https://ll.thespacedevs.com/2.0.0/launch/upcoming/?format=json&mode=list try this for upcoming
+        fetch("https://lldev.thespacedevs.com/2.0.0/launch/upcoming/?format=json&mode=list")
         .then(res => res.json())
         .then(data => setAllLaunches(data.results))
     };

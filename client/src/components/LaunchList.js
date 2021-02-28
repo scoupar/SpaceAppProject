@@ -22,6 +22,7 @@ const LaunchList = ({allLaunches, onLaunchSelect}) => {
 
     return(
         <>
+        <h3>Select an option to view more detail</h3>
         <select onChange={handleChange} defaultValue="default">
             <option disabled value="default">Choose a Launch...</option>
             {options}
