@@ -1,9 +1,25 @@
 import React from 'react';
 
-const AstronautList = () => {
+const AstronautList = ({allAstronauts}) => {
+
+
+    
+    const astronautListItems = allAstronauts.map((astronaut, index) => {
+        return(
+            <option value ={index} key = {index}>{astronaut.name}</option>
+        )
+    })
 
     return(
-        <h1>Hello Astronaut List!</h1>
+        <>
+        <div className = "astronaut-dropdown">
+            <select>
+                {astronautListItems}
+            </select>
+
+        </div> 
+        </>
+        
     )
 }
 

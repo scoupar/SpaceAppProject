@@ -7,6 +7,8 @@ import PlanetService from '../services/PlanetService';
 import PlanetDetail from '../components/PlanetDetail';
 import PlanetForm from '../components/PlanetForm';
 import ErrorPage from '../components/ErrorPage';
+import AstronautList from '../components/AstronautList';
+import AstronautDetail from '../components/AstronautDetail';
 
 
 const AppContainer = () => {
@@ -43,9 +45,9 @@ const AppContainer = () => {
 
     const getAstronauts = () => {
         console.log('fetching astronauts...')
-        fetch ("https://ll.thespacedevs.com/2.0.0/astronaut/?format=json")
+        fetch ("https://lldev.thespacedevs.com/2.2.0/astronaut/?format=json")
         .then(res => res.json())
-        .then(data => setAllAstronauts(data))
+        .then(data => setAllAstronauts(data.results))
     }
 
     useEffect (() => {
@@ -86,7 +88,7 @@ const AppContainer = () => {
         }/>
         <Route exact path = "/astronauts" render ={() =>
         <>
-        <AstronautList />
+        <AstronautList allAstronauts = {allAstronauts}/>
         <AstronautDetail />
         </>
         }/>
