@@ -1,5 +1,5 @@
 import React from "react";
-//import "./Question.ccs";
+import "./Question.css";
 
 const Question = (props) => {
 

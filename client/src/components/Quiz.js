@@ -55,12 +55,11 @@ class Quiz extends Component {
 
     return (
     <>
-    <div className="quiz">
-    <h1>Welcome to Space Quiz </h1>
+    
+    <h1 className="quiz"> Welcome to Space Quiz </h1>
         <div className="content">
             <Question  question={this.state.questions[step]}/>
    
-   </div>
    </div>
     </>
 
