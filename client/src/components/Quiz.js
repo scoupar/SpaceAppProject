@@ -11,17 +11,23 @@ class Quiz extends Component {
             1: "Which is the smallest planet within our solar system?",
             2: "Uranus has only been visited by what spacecraft?",
             3: "There have been more missions to this planet versus any other planet?",
-            4: "Which planet has the most moons?"
+            4: "Which planet has the most moons?",
+            5: "Which is the brightest planet in the night’s sky?",
+            6: "Which is the only planet not named after Greek gods or goddesses?",
+            7: "Which planets have no moons?",
+            8: "The moon called Titan orbits which planet?",
+            9: "Which is the second smallest planet within our solar system?",
+            9: "Which is the brightest planet in the night’s sky?"
         },
         answers: {
             1: {
-                1: "Mars",
+                1: "Mercury",
                 2: "Venus",
                 3: "Earth"
               },
 
             2: {
-                1: "SpaceShipTwo",
+                1: "Space Ship Two",
                 2: "The Voyager 2",
                 3: "Viking 1"
             },
@@ -35,14 +41,58 @@ class Quiz extends Component {
                 2: "Uranus",
                 3: "Saturn"
    
-            }
+            },
+            5: {
+                1: "Pluto",
+                2: "Uranus",
+                3: "Venus"
+   
+            },
+            6: {
+                1: "Earth",
+                2: "Mercury",
+                3: "Uranus"
+   
+            },
+            7: {
+                1: "Uranus and Neptune",
+                2: "Mercury and Venus",
+                3: "Jupiter and Saturn"
+   
+            },
+            8: {
+                1: "Neptune",
+                2: "Venus",
+                3: "Saturn"
+   
+            },
+            9: {
+                1: "Neptune",
+                2: "Mars",
+                3: "Earth"
+   
+            },
+            10: {
+                1: "Venus",
+                2: "Saturn",
+                3: "Jupiter"
+   
+            },
+            
+        
         
         }, 
         correctAnswers: {
             1: "1",
             2: "2",
             3: "3",
-            4: "3"
+            4: "3",
+            5: "3",
+            6: "1",
+            7: "2",
+            8: "3",
+            9: "2",
+            10: "1"
         },
         correctAnswer: 0,
         clickedAnswer: 0,
