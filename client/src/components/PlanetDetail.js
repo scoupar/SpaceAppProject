@@ -1,9 +1,15 @@
 import React from "react";
 
-const PlanetDetail = ({selectedPlanet}) => {
+const PlanetDetail = ({selectedPlanet, deletePlanet}) => {
      
+
+
     if (!selectedPlanet) {
         return(null)
+    }
+
+    const handleDeleteClick = () => {
+        deletePlanet(selectedPlanet._id)
     }
 
     return (
@@ -17,6 +23,7 @@ const PlanetDetail = ({selectedPlanet}) => {
                 <li>{selectedPlanet.type} </li>
                 <li>{selectedPlanet.orbitPeriod} </li>
             </ul>
+            <button type="button" className="delete-button" onClick={handleDeleteClick}>Delete Planet</button>
         </div>
     
     )
