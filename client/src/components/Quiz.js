@@ -3,7 +3,7 @@ import Question from './Question/Question';
 import './Quiz.css';
 
 
-const Quiz = ({state}) => {
+class Quiz extends Component {
 
     state = {
         questions: {
@@ -43,20 +43,22 @@ const Quiz = ({state}) => {
             3: "3",
             4: "3"
         },
-        correctAnswer:0,
+        correctAnswer: 0,
         clickedAnswer: 0,
-        step:1,
+        step: 1,
         score: 0,
 
         }
 
-     
+    render () {
+        let{ questions, step} = this.state;
+
     return (
     <>
     <div className="quiz">
     <h1>Welcome to Space Quiz </h1>
         <div className="content">
-            <Question  question={questions[step]}/>
+            <Question  question={this.state.questions[step]}/>
    
    </div>
    </div>
@@ -64,6 +66,7 @@ const Quiz = ({state}) => {
 
     
    );
+}
 }
 
 

@@ -17,7 +17,7 @@ const AppContainer = () => {
     const [selectedPlanet, setSelectedPlanet] = useState(null)
     const [allLaunches, setAllLaunches] = useState([]);
     const[allAstronauts, setAllAstronauts] = useState([]);
-
+   
     useEffect(() => {
         PlanetService.getPlanets()
         .then(allPlanets => setAllPlanets(allPlanets))
@@ -76,8 +76,7 @@ const AppContainer = () => {
         <h1>Hello Space!</h1>
         <NavBar/>
         <Route exact path = "/" render = {() =>
-            <Home picture={picture} />
-        }/>
+            <Home picture={picture} /> }/>
         <Route exact path = "/planets" render = {() =>
         <>
         <PlanetList allPlanets={allPlanets} onPlanetSelect = {handleSelectedPlanet} deletePlanet = {deletePlanet}/>
@@ -86,9 +85,9 @@ const AppContainer = () => {
         </>
         }/>
         <>
-        <Route exact path ="/quiz" component={Quiz} />
+        <Route exact path ="/quiz" render = {() => 
+            <Quiz /> }/>
         </>
-
         </>
         </Router>
     )

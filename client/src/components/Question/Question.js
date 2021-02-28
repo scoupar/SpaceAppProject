@@ -1,11 +1,11 @@
 import React from "react";
 //import "./Question.ccs";
 
-const Question = () => {
+const Question = (props) => {
 
     return(
 
-        <h1>Question</h1>
+        <h1>{props.question}</h1>
 
 
     )
