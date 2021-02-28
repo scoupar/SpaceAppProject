@@ -84,6 +84,12 @@ const AppContainer = () => {
         <PlanetForm createPlanet = {createPlanet}/>
         </>
         }/>
+        <Route exact path = "/astronauts" render ={() =>
+        <>
+        <AstronautList />
+        <AstronautDetail />
+        </>
+        }/>
 
         </>
         </Router>
