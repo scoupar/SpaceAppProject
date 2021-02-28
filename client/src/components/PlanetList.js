@@ -8,8 +8,8 @@ const PlanetList = ({allPlanets, selectedPlanet, onPlanetSelect, createPlanet, d
     const planetListItems = allPlanets.map((planet, index) =>{
         return (
             <>
-            <li onMouseMove = {()=> {onPlanetSelect(planet)}} key={planet.index}><img src ={planet.url} height = "250" width = "auto"/></li>
-            
+            <li onMouseMove = {()=> {onPlanetSelect(planet)}} key={index}><img className = "image" src ={planet.url} height = "250" width = "auto"/></li>
+        
             </>
     )})
 
