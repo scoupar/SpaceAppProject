@@ -14,6 +14,8 @@ const AppContainer = () => {
     const [picture, setPicture] = useState([]);
     const [allPlanets, setAllPlanets] = useState([]);
     const [selectedPlanet, setSelectedPlanet] = useState(null)
+    const [allLaunches, setAllLaunches] = useState([]);
+    const[allAstronauts, setAllAstronauts] = useState([]);
 
     useEffect(() => {
         PlanetService.getPlanets()
@@ -31,6 +33,20 @@ const AppContainer = () => {
         .then(data => setPicture(data))
 
     };
+
+    const getLaunches = () => {
+        console.log('fetching launches...')
+        fetch("https://ll.thespacedevs.com/2.0.0/launch/?format=json")
+        .then(res => res.json())
+        .then(data => setAllLaunches(data))
+    };
+
+    const getAstronauts = () => {
+        console.log('fetching astronauts...')
+        fetch ("https://ll.thespacedevs.com/2.0.0/astronaut/?format=json")
+        .then(res => res.json())
+        .then(data => setAllAstronauts(data))
+    }
 
     useEffect (() => {
         getPicture()
