@@ -7,6 +7,7 @@ import PlanetService from '../services/PlanetService';
 import PlanetDetail from '../components/PlanetDetail';
 import PlanetForm from '../components/PlanetForm';
 import ErrorPage from '../components/ErrorPage';
+import LaunchList from '../components/LaunchList';
 
 
 const AppContainer = () => {
@@ -15,6 +16,7 @@ const AppContainer = () => {
     const [allPlanets, setAllPlanets] = useState([]);
     const [selectedPlanet, setSelectedPlanet] = useState(null)
     const [allLaunches, setAllLaunches] = useState([]);
+    const [selectedLaunch, setSelectedLaunch] = useState(0);
     const[allAstronauts, setAllAstronauts] = useState([]);
 
     useEffect(() => {
@@ -26,6 +28,8 @@ const AppContainer = () => {
         setSelectedPlanet(selectedPlanet)
     }
 
+
+
     const getPicture = () => {
         console.log('fetching picture...')
         fetch("https://api.nasa.gov/planetary/apod?api_key=KGLh0sNFFtTcGpXlTvep10rRZMuzX9ywmz3SsCXw")
@@ -36,9 +40,9 @@ const AppContainer = () => {
 
     const getLaunches = () => {
         console.log('fetching launches...')
-        fetch("https://ll.thespacedevs.com/2.0.0/launch/?format=json")
+        fetch("https://lldev.thespacedevs.com/2.0.0/launch/?format=json&offset=1700")
         .then(res => res.json())
-        .then(data => setAllLaunches(data))
+        .then(data => setAllLaunches(data.results))
     };
 
     const getAstronauts = () => {
@@ -51,8 +55,12 @@ const AppContainer = () => {
     useEffect (() => {
         getPicture()
         getLaunches()
-        getAstronauts()
+        // getAstronauts()
     },[]);
+
+    const handleSelectedLaunch = (selectedLaunch) => {
+        setSelectedLaunch(selectedLaunch)
+    };
 
     const createPlanet = (newPlanet) => {
         PlanetService.postPlanet(newPlanet)
@@ -84,6 +92,7 @@ const AppContainer = () => {
         <PlanetForm createPlanet = {createPlanet}/>
         </>
         }/>
+        <Route exact path = "/launches" render = { () => <LaunchList allLaunches={allLaunches} onLaunchSelect={handleSelectedLaunch}/>}/>
 
         </>
         </Router>
