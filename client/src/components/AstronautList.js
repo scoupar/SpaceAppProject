@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AstronautList = ({allAstronauts}) => {
+const AstronautList = ({allAstronauts, onAstronautSelect}) => {
 
 
     
@@ -12,7 +12,7 @@ const AstronautList = ({allAstronauts}) => {
 
     return(
         <>
-        <div className = "astronaut-dropdown">
+        <div className = "astronaut-dropdown" onChange = {onAstronautSelect}>
             <select>
                 {astronautListItems}
             </select>

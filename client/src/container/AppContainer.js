@@ -18,6 +18,7 @@ const AppContainer = () => {
     const [selectedPlanet, setSelectedPlanet] = useState(null)
     const [allLaunches, setAllLaunches] = useState([]);
     const[allAstronauts, setAllAstronauts] = useState([]);
+    const [selectedAstronaut, setSelectedAstronaut] = useState(null)
 
     useEffect(() => {
         PlanetService.getPlanets()
@@ -27,6 +28,8 @@ const AppContainer = () => {
     const handleSelectedPlanet = (selectedPlanet) => {  
         setSelectedPlanet(selectedPlanet)
     }
+
+    
 
     const getPicture = () => {
         console.log('fetching picture...')
@@ -45,7 +48,7 @@ const AppContainer = () => {
 
     const getAstronauts = () => {
         console.log('fetching astronauts...')
-        fetch ("https://lldev.thespacedevs.com/2.2.0/astronaut/?format=json")
+        fetch ("https://lldev.thespacedevs.com/2.0.0/astronaut/?limit=150&status=1")
         .then(res => res.json())
         .then(data => setAllAstronauts(data.results))
     }
@@ -70,6 +73,9 @@ const AppContainer = () => {
         })
     }
 
+    const handleSelectedAstronaut = (event) => {
+        setSelectedAstronaut(allAstronauts[event.target.value]);
+    }
     
     return(
         <Router>
@@ -88,8 +94,8 @@ const AppContainer = () => {
         }/>
         <Route exact path = "/astronauts" render ={() =>
         <>
-        <AstronautList allAstronauts = {allAstronauts}/>
-        <AstronautDetail />
+        <AstronautList allAstronauts = {allAstronauts} onAstronautSelect = {handleSelectedAstronaut}/>
+        <AstronautDetail selectedAstronaut = {selectedAstronaut}/>
         </>
         }/>
 
