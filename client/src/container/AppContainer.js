@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import Home from '../components/Home';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import PlanetList from '../components/PlanetList';
 import PlanetService from '../services/PlanetService';
 import PlanetDetail from '../components/PlanetDetail';
 import PlanetForm from '../components/PlanetForm';
 import ErrorPage from '../components/ErrorPage';
+import Quiz from '../components/Quiz';
 
 
 const AppContainer = () => {
@@ -84,6 +85,9 @@ const AppContainer = () => {
         <PlanetForm createPlanet = {createPlanet}/>
         </>
         }/>
+        <>
+        <Route exact path ="/quiz" component={Quiz} />
+        </>
 
         </>
         </Router>
