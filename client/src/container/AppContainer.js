@@ -61,7 +61,7 @@ const AppContainer = () => {
         }/>
         <Route exact path = "/planets" render = {() =>
         <>
-        <PlanetList allPlanets={allPlanets} onPlanetSelect = {handleSelectedPlanet}/>
+        <PlanetList allPlanets={allPlanets} onPlanetSelect = {handleSelectedPlanet} deletePlanet = {deletePlanet}/>
         <PlanetDetail selectedPlanet = {selectedPlanet} deletePlanet={deletePlanet}/>
         <PlanetForm createPlanet = {createPlanet}/>
         </>

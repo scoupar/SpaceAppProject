@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:5000/api/planets"
+const baseURL = "http://localhost:5000/api/planets/"
 
 const PlanetService = {
     getPlanets() {
