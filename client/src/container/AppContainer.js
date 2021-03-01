@@ -9,6 +9,7 @@ import PlanetForm from '../components/PlanetForm';
 import ErrorPage from '../components/ErrorPage';
 import AstronautList from '../components/AstronautList';
 import AstronautDetail from '../components/AstronautDetail';
+import AstronautChart from '../components/AstronautChart';
 
 
 const AppContainer = () => {
@@ -96,6 +97,7 @@ const AppContainer = () => {
         <>
         <AstronautList allAstronauts = {allAstronauts} onAstronautSelect = {handleSelectedAstronaut}/>
         <AstronautDetail selectedAstronaut = {selectedAstronaut}/>
+        <AstronautChart  allAstronauts = {allAstronauts}/>
         </>
         }/>
 
