@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import './LaunchMap.css';
 import { render } from 'react-dom';
+import "leaflet/dist/leaflet.css"
 
 const LaunchMap = () => {
 
