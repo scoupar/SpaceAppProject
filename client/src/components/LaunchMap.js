@@ -22,6 +22,11 @@ const LaunchMap = () => {
                 Onenui Station, Mahia Peninsula, New Zealand
                 </Popup>
                 </Marker>
+                <Marker position={[51.883937, 128.334112]} icon={new Icon({iconUrl: Rocket, iconSize: [25,41], iconAnchor: [12, 41]})}>
+                <Popup>
+                Vostochny Cosmodrome, Siberia, Russian Federation
+                </Popup>
+                </Marker>
             </MapContainer>
         </div>
     )
