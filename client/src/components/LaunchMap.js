@@ -27,6 +27,11 @@ const LaunchMap = () => {
                 Vostochny Cosmodrome, Siberia, Russian Federation
                 </Popup>
                 </Marker>
+                <Marker position={[45.964585, 63.305243]} icon={new Icon({iconUrl: Rocket, iconSize: [25,41], iconAnchor: [12, 41]})}>
+                <Popup>
+                Baikonur Cosmodrome, Republic of Kazakhstan
+                </Popup>
+                </Marker>
             </MapContainer>
         </div>
     )
