@@ -1,8 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import L from 'leaflet';
 import './LaunchMap.css';
-import { render } from 'react-dom';
 import "leaflet/dist/leaflet.css"
 import Rocket from './Rocket.png';
 import {Icon} from 'leaflet'

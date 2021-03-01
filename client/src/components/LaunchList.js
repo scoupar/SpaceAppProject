@@ -1,6 +1,5 @@
-import React, {Component} from 'react';
-// import { render } from 'react-dom';
-// import LaunchMap from '../components/LaunchMap';
+import React from 'react';
+import './LaunchList.css';
 
 
 
@@ -28,16 +27,17 @@ const LaunchList = ({allLaunches, onLaunchSelect}) => {
     
 
     return(
-        <>
-        <h1>Upcoming Launches</h1>
-       
-        <h3>Select an option from the dropdown list to view more detail about upcoming launches.</h3>
-        <select onChange={handleChange} defaultValue="default">
-            <option disabled value="default">Choose a Launch...</option>
-            {options}
-        </select>
-
-        </>
+        <div className="launch-list">
+            
+            <h1><span>Upcoming Launches</span></h1>
+        
+            <h3><span>Select an option from the dropdown list to view more detail about upcoming launches.</span></h3>
+            <select onChange={handleChange} defaultValue="default">
+                <option disabled value="default">Choose a Launch...</option>
+                {options}
+            </select>
+            
+        </div>
     )
 }
 

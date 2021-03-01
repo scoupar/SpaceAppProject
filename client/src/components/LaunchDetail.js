@@ -11,11 +11,6 @@ const LaunchDetail = ({selectedLaunch}) => {
 
     
 
-   
-    
-
-    
-
     return(
         <>
             <div className="launch-wrapper">
@@ -23,12 +18,11 @@ const LaunchDetail = ({selectedLaunch}) => {
                 <div className="launch-container">
                     <div className="launch-detail">
                         <h2>{selectedLaunch.name}</h2>
-                        <p>{selectedLaunch.net}</p>
-                        
-                        <p>{selectedLaunch.status.name}</p>
+                        <p>Date: {selectedLaunch.net}</p>
+                        <p>Status: {selectedLaunch.status.name}</p>
                         <p>{selectedLaunch.lsp_name}</p>
-                        <p>{selectedLaunch.pad}</p>
-                        <p>{selectedLaunch.location}</p>
+                        <p>Launch Pad Name: {selectedLaunch.pad}</p>
+                        <p>Location: {selectedLaunch.location}</p>
                         <p>Mission Name:{selectedLaunch.mission}</p>
                         <p>Mission Type:{selectedLaunch.mission_type}</p>
                     </div>
