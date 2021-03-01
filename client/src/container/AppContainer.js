@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, Component} from 'react';
+import { render } from 'react-dom';
 import Home from '../components/Home';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from '../components/NavBar';
@@ -9,6 +10,9 @@ import PlanetForm from '../components/PlanetForm';
 import ErrorPage from '../components/ErrorPage';
 import LaunchList from '../components/LaunchList';
 import LaunchDetail from '../components/LaunchDetail';
+import LaunchMap from '../components/LaunchMap';
+
+
 
 
 const AppContainer = () => {
@@ -19,6 +23,7 @@ const AppContainer = () => {
     const [allLaunches, setAllLaunches] = useState([]);
     const [selectedLaunch, setSelectedLaunch] = useState(0);
     const[allAstronauts, setAllAstronauts] = useState([]);
+    
 
     useEffect(() => {
         PlanetService.getPlanets()
@@ -42,7 +47,6 @@ const AppContainer = () => {
     const getLaunches = () => {
         console.log('fetching launches...')
         // fetch("https://lldev.thespacedevs.com/2.0.0/launch/?format=json&offset=1700")
-        // https://ll.thespacedevs.com/2.0.0/launch/upcoming/?format=json&mode=list try this for upcoming
         fetch("https://lldev.thespacedevs.com/2.0.0/launch/upcoming/?format=json&mode=list")
         .then(res => res.json())
         .then(data => setAllLaunches(data.results))
@@ -80,6 +84,7 @@ const AppContainer = () => {
     }
 
     
+    
     return(
         <Router>
         <>      
@@ -100,6 +105,7 @@ const AppContainer = () => {
         <>
         <LaunchList allLaunches={allLaunches} onLaunchSelect={handleSelectedLaunch}/>
         <LaunchDetail selectedLaunch={selectedLaunch} />
+        <LaunchMap />
         </>
         }/>
         </>

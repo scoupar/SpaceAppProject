@@ -11,6 +11,11 @@ const LaunchDetail = ({selectedLaunch}) => {
 
     
 
+   
+    
+
+    
+
     return(
         <>
             <div className="launch-wrapper">
@@ -19,6 +24,7 @@ const LaunchDetail = ({selectedLaunch}) => {
                     <div className="launch-detail">
                         <h2>{selectedLaunch.name}</h2>
                         <p>{selectedLaunch.net}</p>
+                        
                         <p>{selectedLaunch.status.name}</p>
                         <p>{selectedLaunch.lsp_name}</p>
                         <p>{selectedLaunch.pad}</p>
@@ -30,6 +36,6 @@ const LaunchDetail = ({selectedLaunch}) => {
             </div>
         </>
     )
-}
+};
 
 export default LaunchDetail;
