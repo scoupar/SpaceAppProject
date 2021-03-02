@@ -1,33 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css'
+import Header from './Header.png';
 
 
 const NavBar = () => {
 
     return (
+        <>
+        <img src={Header} alt="header" />
         <div className="navbar">
             <ul>
                 <li>
-                    <Link to="/">Home </Link>
+                    <Link to="/">HOME </Link>
                 </li>
                 <li>
-                    <Link to="/planets">Planets</Link>
+                    <Link to="/planets">PLANETS</Link>
                 </li>
                 <li>
-                    <Link to="/launches">Launches</Link>
+                    <Link to="/launches">LAUNCHES</Link>
                 </li>
                 <li>
-                    <Link to="/astronauts">Astronauts</Link>
+                    <Link to="/astronauts">ASTRONAUTS</Link>
                 </li>
                 <li>
-                    <Link to="/quiz">Quiz</Link>
+                    <Link to="/quiz">QUIZ</Link>
                 </li>
                 <li>
-                    <Link to="/interact">Interact</Link>
+                    <Link to="/interact">INTERACT</Link>
                 </li>
             </ul>
         </div>    
+        </>
     )
 
 }
