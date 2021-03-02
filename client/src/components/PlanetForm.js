@@ -86,10 +86,6 @@ const PlanetForm = ({createPlanet}) => {
                 <br />
                 <select className="planet-select" id = "url" name = "url" onChange = {handleUrlChange} defaultValue = "default">
                 <option disabled value ="default">Choose your planet look</option>
-                {/* <option value = "https://mocah.org/thumbs/532325-space-planet.jpg">Option1</option>
-                <option value = "https://images.unsplash.com/photo-1560507074-b9eb43faab00?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8cGxhbmV0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Option2</option>
-                <option value = "https://cdnb.artstation.com/p/assets/images/images/017/697/507/large/andrew-gaus-ice-planet-2.jpg?1557001504">Option3</option>
-                <option value = "https://images.unsplash.com/photo-1610970883364-30e1ab2dc48b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjJ8fHBsYW5ldHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Option4</option> */}
                 <option value = {image}>Option1</option>
                 <option value = {image2}>Option2</option>
                 <option value = {image3}>Option3</option>

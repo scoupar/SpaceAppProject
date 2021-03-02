@@ -17,7 +17,7 @@ class Quiz extends Component {
             7: "Which planets have no moons?",
             8: "The moon called Titan orbits which planet?",
             9: "Which is the second smallest planet within our solar system?",
-            10: "The day on which the Sun’s direct rays cross the celestial equator is called?"
+            10: "Which planet is named after the Roman god of the sea?"
         },
         answers: {
             1: {
@@ -73,9 +73,9 @@ class Quiz extends Component {
    
             },
             10: {
-                1: "the equinox",
-                2: "the ecliptic",
-                3: "the solstice"
+                1: "Neptune",
+                2: "Jupiter",
+                3: "Saturn"
    
             },
             

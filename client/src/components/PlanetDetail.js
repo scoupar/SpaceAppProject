@@ -28,6 +28,7 @@ const PlanetDetail = ({selectedPlanet, deletePlanet}) => {
                             <li><span>Does it have rings?: {selectedPlanet.rings} </span></li>
                             <li><span>Type of planet: {selectedPlanet.type}</span> </li>
                             <li><span>Orbit period (relative to Earth): {selectedPlanet.orbitPeriod}</span> </li>
+                            <li><span>Fun Fact: {selectedPlanet.funFact}</span></li>
                            <Popup trigger={<button className="delete-button">Delete Planet</button>} position="right center">
                                <div>Are you sure you want to delete your planet? <button type="button" className="delete-button" onClick={handleDeleteClick}>Delete Planet</button></div>
                             </Popup> 
