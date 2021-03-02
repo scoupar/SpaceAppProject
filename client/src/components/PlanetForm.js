@@ -57,6 +57,7 @@ const PlanetForm = ({createPlanet}) => {
 
     return(
         <>
+        <h3><span>Using your knowledge about our planets in the solar system, have a go at creating your very own planet. </span></h3>
         <form onSubmit = {handleSubmit}>
             <div className = "planet-form">
                 <label htmlFor = "planetName">Planet Name:</label>
@@ -68,13 +69,13 @@ const PlanetForm = ({createPlanet}) => {
                 <label htmlFor = "moons">Number of moons:</label>
                 <input type = "number" id = "moons" value ={moons} onChange = {handleMoonsChange} required />
                 <label htmlFor = "rings">Does it have any rings?</label>
-                <select id="rings" name="rings" onChange = {handleRingsChange} defaultValue = "default">
+                <select className="planet-select" id="rings" name="rings" onChange = {handleRingsChange} defaultValue = "default">
                 <option disabled value ="default">Does it have any rings?</option>
                 <option value = "Yes">Yes</option>
                 <option value = "No">No</option>
                 </select>
                 <label htmlFor = "type">What type of planet is it?</label>
-                <select id = "type" name = "type" onChange = {handleTypeChange} defaultValue = "default">
+                <select className="planet-select" id = "type" name = "type" onChange = {handleTypeChange} defaultValue = "default">
                 <option disabled value ="default">Planet Type</option>
                 <option value = "Terrestrial">Terrestrial</option>
                 <option value = "Ice Giant">Ice Giant</option>
@@ -82,7 +83,8 @@ const PlanetForm = ({createPlanet}) => {
                 </select>
                 <label htmlFor = "orbitPeriod">Orbit Period:</label>
                 <input type = "number" id = "orbitPeriod" value ={orbitPeriod} onChange = {handleOrbitPeriodChange} required />
-                <select id = "url" name = "url" onChange = {handleUrlChange} defaultValue = "default">
+                <br />
+                <select className="planet-select" id = "url" name = "url" onChange = {handleUrlChange} defaultValue = "default">
                 <option disabled value ="default">Choose your planet look</option>
                 {/* <option value = "https://mocah.org/thumbs/532325-space-planet.jpg">Option1</option>
                 <option value = "https://images.unsplash.com/photo-1560507074-b9eb43faab00?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8cGxhbmV0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Option2</option>
@@ -95,7 +97,8 @@ const PlanetForm = ({createPlanet}) => {
                 <option value = {image5}>Option5</option>
                 <option value = {image6}>Option6</option>
                 </select>
-                <input type = "submit" name = "submit" value = "Create New Planet"/>
+                <br />
+                <input className="form-button" type = "submit" name = "submit" value = "Create New Planet"/>
                 
             </div>
 

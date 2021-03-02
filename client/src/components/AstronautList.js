@@ -14,9 +14,11 @@ const AstronautList = ({allAstronauts, onAstronautSelect}) => {
     return(
         
         <div className = "container">
-        <h1><span>SELECT AN ASTRONAUT FROM THE LIST!</span></h1>
+        <h1><span>Astronauts</span></h1>
+        <h2><span>Select an astronaut from the list below to find out more about them!</span></h2>
         <div className = "astronaut-dropdown" onChange = {onAstronautSelect}>
-            <select>
+            <select defaultValue = "default">
+            <option disabled value="default">Choose an astronaut...</option>
                 {astronautListItems}
             </select>
 
