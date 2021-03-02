@@ -5,6 +5,43 @@ import HighchartsReact from 'highcharts-react-official';
 
 const AstronautChart = ({allAstronauts}) => {
 
+
+
+    const options = {
+        chart:{
+            type: 'pie',
+            backgroundColor:'rgba(0,0,0,0)'
+        }, 
+        title: {
+            style: {
+                color:"#F7F8FA",
+                backgroundColor:"black"
+            },
+            text:'WHICH COUNTRIES DO ASTRONAUTS COME FROM?'
+        },
+        series:[
+            {   
+                data:[
+                    ['American', 120],
+                    ['Russian', 250],
+                    ['Chinese', 10],
+                    ['Earthling', 15]
+                ]
+            }
+        ]
+    }
+    return(
+        <div className= "chart">
+            
+            <HighchartsReact highcharts = {Highcharts} options = {options}/>
+          
+        </div>
+    )
+}
+
+export default AstronautChart;
+
+
     
     // const filteredAstronauts = allAstronauts.map((astronaut) => {
     //         return astronaut.nationality
@@ -60,37 +97,3 @@ const AstronautChart = ({allAstronauts}) => {
 
     //  const finalList = [... new Set(space)];
     //  console.log(finalList);
-
-    const options = {
-        chart:{
-            type: 'pie',
-            backgroundColor:'rgba(0,0,0,0)'
-        }, 
-        title: {
-            style: {
-                color:"#F7F8FA"
-            },
-            text:'WHICH COUNTRIES DO ASTRONAUTS COME FROM?'
-        },
-        series:[
-            {   
-                data:[
-                    ['American', 50],
-                    ['Russian', 25],
-                    ['Chinese', 10],
-                    ['Earthling', 15]
-                ]
-            }
-        ]
-    }
-    return(
-        <div className= "chart">
-            
-            <HighchartsReact highcharts = {Highcharts} options = {options}/>
-          
-        </div>
-    )
-}
-
-export default AstronautChart;
-

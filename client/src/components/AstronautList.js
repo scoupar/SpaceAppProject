@@ -14,7 +14,7 @@ const AstronautList = ({allAstronauts, onAstronautSelect}) => {
     return(
         
         <div className = "container">
-        <h1>SELECT AN ASTRONAUT FROM THE LIST!</h1>
+        <h1><span>SELECT AN ASTRONAUT FROM THE LIST!</span></h1>
         <div className = "astronaut-dropdown" onChange = {onAstronautSelect}>
             <select>
                 {astronautListItems}
