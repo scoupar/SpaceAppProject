@@ -1,0 +1,16 @@
+.launch-wrapper {
+    display:flex;
+    justify-content: center;
+    margin: 100px;
+}
+
+.launch-container {
+    height: 400px;
+    background-color: white;
+    color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: larger;
+    align-content: center;  
+    
+}

@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, Component} from 'react';
+import { render } from 'react-dom';
 import Home from '../components/Home';
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import NavBar from '../components/NavBar';
@@ -9,6 +10,14 @@ import PlanetForm from '../components/PlanetForm';
 import ErrorPage from '../components/ErrorPage';
 import Quiz from '../components/Quiz';
 import Interact from '../components/Interact';
+import LaunchList from '../components/LaunchList';
+import LaunchDetail from '../components/LaunchDetail';
+import LaunchMap from '../components/LaunchMap';
+
+import AstronautList from '../components/AstronautList';
+import AstronautDetail from '../components/AstronautDetail';
+import AstronautChart from '../components/AstronautChart';
+import '../components/AstronautList.css';
 
 
 
@@ -20,6 +29,10 @@ const AppContainer = () => {
     const [allLaunches, setAllLaunches] = useState([]);
     const [allAstronauts, setAllAstronauts] = useState([]);
    
+    const [selectedLaunch, setSelectedLaunch] = useState(0);
+    const[allAstronauts, setAllAstronauts] = useState([]);
+    const [selectedAstronaut, setSelectedAstronaut] = useState(null)
+
     useEffect(() => {
         PlanetService.getPlanets()
         .then(allPlanets => setAllPlanets(allPlanets))
@@ -28,6 +41,9 @@ const AppContainer = () => {
     const handleSelectedPlanet = (selectedPlanet) => {  
         setSelectedPlanet(selectedPlanet)
     }
+
+
+    
 
     const getPicture = () => {
         console.log('fetching picture...')
@@ -39,23 +55,28 @@ const AppContainer = () => {
 
     const getLaunches = () => {
         console.log('fetching launches...')
-        fetch("https://ll.thespacedevs.com/2.0.0/launch/?format=json")
+        // fetch("https://lldev.thespacedevs.com/2.0.0/launch/?format=json&offset=1700")
+        fetch("https://lldev.thespacedevs.com/2.0.0/launch/upcoming/?format=json&mode=list")
         .then(res => res.json())
-        .then(data => setAllLaunches(data))
+        .then(data => setAllLaunches(data.results))
     };
 
     const getAstronauts = () => {
         console.log('fetching astronauts...')
-        fetch ("https://ll.thespacedevs.com/2.0.0/astronaut/?format=json")
+        fetch ("https://lldev.thespacedevs.com/2.0.0/astronaut/?limit=150&status=1")
         .then(res => res.json())
-        .then(data => setAllAstronauts(data))
+        .then(data => setAllAstronauts(data.results))
     }
 
     useEffect (() => {
         getPicture()
         getLaunches()
-        getAstronauts()
+        // getAstronauts()
     },[]);
+
+    const handleSelectedLaunch = (selectedLaunch) => {
+        setSelectedLaunch(selectedLaunch)
+    };
 
     const createPlanet = (newPlanet) => {
         PlanetService.postPlanet(newPlanet)
@@ -71,6 +92,10 @@ const AppContainer = () => {
         })
     }
 
+    const handleSelectedAstronaut = (event) => {
+        setSelectedAstronaut(allAstronauts[event.target.value]);
+    }
+    
     
     return(
         <Router>
@@ -92,6 +117,24 @@ const AppContainer = () => {
         </>
         <Route exact path ="/interact" render = {() => 
             <Interact /> }/>
+        
+        <Route exact path = "/launches" render = { () => 
+        <>
+        <LaunchList allLaunches={allLaunches} onLaunchSelect={handleSelectedLaunch}/>
+        <LaunchDetail selectedLaunch={selectedLaunch} />
+        <LaunchMap />
+        </>
+        }/>
+        <Route exact path = "/astronauts" render ={() =>
+        <>
+        <div className="astronaut-container">
+        <AstronautList allAstronauts = {allAstronauts} onAstronautSelect = {handleSelectedAstronaut}/>
+        <AstronautDetail selectedAstronaut = {selectedAstronaut}/>
+        <AstronautChart  allAstronauts = {allAstronauts}/>
+        </div>
+        </>
+        }/>
+
         </>
         </Router>
     )
