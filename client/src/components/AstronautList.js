@@ -1,5 +1,6 @@
 import React from 'react';
 import './AstronautList.css';
+import {Animated} from 'react-animated-css';
 
 const AstronautList = ({allAstronauts, onAstronautSelect}) => {
 
@@ -14,7 +15,9 @@ const AstronautList = ({allAstronauts, onAstronautSelect}) => {
     return(
         
         <div className = "container">
+        <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
         <h1><span>Astronauts</span></h1>
+        </Animated>
         <h2><span>Select an astronaut from the list below to find out more about them!</span></h2>
         <div className = "astronaut-dropdown" onChange = {onAstronautSelect}>
             <select defaultValue = "default">

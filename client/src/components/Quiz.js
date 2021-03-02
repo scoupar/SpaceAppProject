@@ -133,7 +133,7 @@ class Quiz extends Component {
     return (
     <>
     
-    <h1 className="quiz"> Welcome to Space Quiz </h1>
+    <h1 className="quiz"> <span>Welcome to Space Quiz</span> </h1>
         <div className="content">
             {step <= Object.keys(questions).length ?
             ( <>

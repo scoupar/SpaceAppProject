@@ -29,7 +29,7 @@ const LaunchList = ({allLaunches, onLaunchSelect}) => {
 
     return(
         <div className="launch-list">
-            <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
+            <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
                 <h1><span>Upcoming Launches</span></h1>
             </Animated>
             
