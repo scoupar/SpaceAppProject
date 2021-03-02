@@ -10,6 +10,8 @@ import ErrorPage from '../components/ErrorPage';
 import AstronautList from '../components/AstronautList';
 import AstronautDetail from '../components/AstronautDetail';
 import AstronautChart from '../components/AstronautChart';
+import '../components/AstronautList.css';
+
 
 
 const AppContainer = () => {
@@ -95,9 +97,11 @@ const AppContainer = () => {
         }/>
         <Route exact path = "/astronauts" render ={() =>
         <>
+        <div className="astronaut-container">
         <AstronautList allAstronauts = {allAstronauts} onAstronautSelect = {handleSelectedAstronaut}/>
         <AstronautDetail selectedAstronaut = {selectedAstronaut}/>
         <AstronautChart  allAstronauts = {allAstronauts}/>
+        </div>
         </>
         }/>
 

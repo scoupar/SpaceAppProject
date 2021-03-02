@@ -1,4 +1,5 @@
 import React from 'react';
+import './AstronautList.css';
 
 const AstronautList = ({allAstronauts, onAstronautSelect}) => {
 
@@ -11,14 +12,14 @@ const AstronautList = ({allAstronauts, onAstronautSelect}) => {
     })
 
     return(
-        <>
+        <div className = "container">
         <div className = "astronaut-dropdown" onChange = {onAstronautSelect}>
             <select>
                 {astronautListItems}
             </select>
 
         </div> 
-        </>
+        </div>
         
     )
 }
