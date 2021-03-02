@@ -1,5 +1,6 @@
 import React from 'react';
 import './LaunchList.css';
+import {Animated} from "react-animated-css";
 
 
 
@@ -28,8 +29,10 @@ const LaunchList = ({allLaunches, onLaunchSelect}) => {
 
     return(
         <div className="launch-list">
+            <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
+                <h1><span>Upcoming Launches</span></h1>
+            </Animated>
             
-            <h1><span>Upcoming Launches</span></h1>
         
             <h3><span>Select an option from the dropdown list to view more detail about upcoming launches.</span></h3>
             <select className="launch-select" onChange={handleChange} defaultValue="default">
