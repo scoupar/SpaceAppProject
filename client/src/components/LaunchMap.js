@@ -9,6 +9,8 @@ const LaunchMap = () => {
 
     
     return(
+        <>
+        <h3><span>Click on a rocket on the map to see more information.</span></h3>
         <div id="mapid">
             <MapContainer center={[0, 0]} zoom={1} scrollWheelZoom={false}>
                 <TileLayer
@@ -57,6 +59,7 @@ const LaunchMap = () => {
                 </Marker>
             </MapContainer>
         </div>
+        </>
     )
     
 
