@@ -43,3 +43,36 @@ h1{
 
 color:white;
 }
+
+.heading {
+  color:white;
+}
+
+.heading > span {
+  background-color: black;
+}
+
+.welcome {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.welcome > span {
+  background-color: black;
+ 
+}
+
+.picture-title > span {
+  background-color: black;
+}
+
+.photo-blurb {
+  margin-bottom: 50px;;
+}
+
+.photo-blurb > h3 > span {
+  background-color: black;
+}
+.photo-blurb > p > span {
+  background-color: black;
+}

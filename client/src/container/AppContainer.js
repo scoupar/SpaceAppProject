@@ -98,6 +98,7 @@ const AppContainer = () => {
         <Router>
         <>      
         <NavBar/> 
+        
         <Route exact path = "/" render = {() =>
             <Home picture={picture} /> }/>
         <Route exact path = "/planets" render = {() =>
@@ -111,8 +112,7 @@ const AppContainer = () => {
         <Route exact path ="/quiz" render = {() => 
             <Quiz /> }/>
         </>
-        <Route exact path ="/interact" render = {() => 
-            <Interact /> }/>
+        <Route exact path ="/interact" render = {() => <Interact /> }/>
         
         <Route exact path = "/launches" render = { () => 
         <>
@@ -130,8 +130,9 @@ const AppContainer = () => {
         </div>
         </>
         }/>
-
+        
         </>
+        
         </Router>
     )
 }
