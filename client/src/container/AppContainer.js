@@ -17,6 +17,7 @@ import AstronautList from '../components/AstronautList';
 import AstronautDetail from '../components/AstronautDetail';
 import AstronautChart from '../components/AstronautChart';
 import '../components/AstronautList.css';
+import FooterPage from '../components/FooterPage';
 
 
 
@@ -132,7 +133,7 @@ const AppContainer = () => {
         }/>
         
         </>
-        
+        <FooterPage/>
         </Router>
     )
 }
