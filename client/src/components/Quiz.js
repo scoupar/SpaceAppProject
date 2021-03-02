@@ -17,7 +17,7 @@ class Quiz extends Component {
             7: "Which planets have no moons?",
             8: "The moon called Titan orbits which planet?",
             9: "Which is the second smallest planet within our solar system?",
-            9: "Which is the brightest planet in the night’s sky?"
+            10: "The day on which the Sun’s direct rays cross the celestial equator is called?"
         },
         answers: {
             1: {
@@ -73,9 +73,9 @@ class Quiz extends Component {
    
             },
             10: {
-                1: "Venus",
-                2: "Saturn",
-                3: "Jupiter"
+                1: "the equinox",
+                2: "the ecliptic",
+                3: "the solstice"
    
             },
             

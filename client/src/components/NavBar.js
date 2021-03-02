@@ -23,6 +23,9 @@ const NavBar = () => {
                 <li>
                     <Link to="/quiz">Quiz</Link>
                 </li>
+                <li>
+                    <Link to="/interact">Interact</Link>
+                </li>
             </ul>
         </div>    
     )

@@ -8,6 +8,8 @@ import PlanetDetail from '../components/PlanetDetail';
 import PlanetForm from '../components/PlanetForm';
 import ErrorPage from '../components/ErrorPage';
 import Quiz from '../components/Quiz';
+import Interact from '../components/Interact';
+
 
 
 const AppContainer = () => {
@@ -16,7 +18,7 @@ const AppContainer = () => {
     const [allPlanets, setAllPlanets] = useState([]);
     const [selectedPlanet, setSelectedPlanet] = useState(null)
     const [allLaunches, setAllLaunches] = useState([]);
-    const[allAstronauts, setAllAstronauts] = useState([]);
+    const [allAstronauts, setAllAstronauts] = useState([]);
    
     useEffect(() => {
         PlanetService.getPlanets()
@@ -74,7 +76,7 @@ const AppContainer = () => {
         <Router>
         <>      
         <h1>Hello Space!</h1>
-        <NavBar/>
+        <NavBar/> 
         <Route exact path = "/" render = {() =>
             <Home picture={picture} /> }/>
         <Route exact path = "/planets" render = {() =>
@@ -88,6 +90,8 @@ const AppContainer = () => {
         <Route exact path ="/quiz" render = {() => 
             <Quiz /> }/>
         </>
+        <Route exact path ="/interact" render = {() => 
+            <Interact /> }/>
         </>
         </Router>
     )
