@@ -8,7 +8,7 @@ const NavBar = () => {
 
     return (
         <>
-        <img src={Header} alt="header" />
+        <img src={Header} alt="header" width="100%" />
         <div className="navbar">
             <ul>
                 <li>

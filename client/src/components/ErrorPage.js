@@ -1,9 +1,10 @@
 import React from 'react';
+import Error from './Error.png';
 
 const ErrorPage = () => {
 
     return(
-        <h1>404 - PAGE NOT FOUND</h1>
+        <img src={Error} />
     )
 };
 
