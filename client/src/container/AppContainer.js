@@ -12,6 +12,10 @@ import LaunchList from '../components/LaunchList';
 import LaunchDetail from '../components/LaunchDetail';
 import LaunchMap from '../components/LaunchMap';
 
+import AstronautList from '../components/AstronautList';
+import AstronautDetail from '../components/AstronautDetail';
+import AstronautChart from '../components/AstronautChart';
+import '../components/AstronautList.css';
 
 
 
@@ -23,7 +27,7 @@ const AppContainer = () => {
     const [allLaunches, setAllLaunches] = useState([]);
     const [selectedLaunch, setSelectedLaunch] = useState(0);
     const[allAstronauts, setAllAstronauts] = useState([]);
-    
+    const [selectedAstronaut, setSelectedAstronaut] = useState(null)
 
     useEffect(() => {
         PlanetService.getPlanets()
@@ -35,6 +39,7 @@ const AppContainer = () => {
     }
 
 
+    
 
     const getPicture = () => {
         console.log('fetching picture...')
@@ -54,9 +59,9 @@ const AppContainer = () => {
 
     const getAstronauts = () => {
         console.log('fetching astronauts...')
-        fetch ("https://ll.thespacedevs.com/2.0.0/astronaut/?format=json")
+        fetch ("https://lldev.thespacedevs.com/2.0.0/astronaut/?limit=150&status=1")
         .then(res => res.json())
-        .then(data => setAllAstronauts(data))
+        .then(data => setAllAstronauts(data.results))
     }
 
     useEffect (() => {
@@ -83,6 +88,9 @@ const AppContainer = () => {
         })
     }
 
+    const handleSelectedAstronaut = (event) => {
+        setSelectedAstronaut(allAstronauts[event.target.value]);
+    }
     
     
     return(
@@ -108,6 +116,16 @@ const AppContainer = () => {
         <LaunchMap />
         </>
         }/>
+        <Route exact path = "/astronauts" render ={() =>
+        <>
+        <div className="astronaut-container">
+        <AstronautList allAstronauts = {allAstronauts} onAstronautSelect = {handleSelectedAstronaut}/>
+        <AstronautDetail selectedAstronaut = {selectedAstronaut}/>
+        <AstronautChart  allAstronauts = {allAstronauts}/>
+        </div>
+        </>
+        }/>
+
         </>
         </Router>
     )
