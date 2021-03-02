@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Question from './question/Question';
 import Answer from './answer/Answer';
 import './Quiz.css';
+import {Animated} from 'react-animated-css';
 
 
 class Quiz extends Component {
@@ -133,7 +134,9 @@ class Quiz extends Component {
     return (
     <>
     
+    <Animated animationIn="lightSpeedIn" animationOut="lightSpeedOut" isVisible={true}>
     <h1 className="quiz"> <span>Welcome to Space Quiz</span> </h1>
+    </Animated>
         <div className="content">
             {step <= Object.keys(questions).length ?
             ( <>
@@ -159,9 +162,20 @@ class Quiz extends Component {
             </button>
             </>) :(
                 <div ClassName="finalPage">
-                    <h> You have completed the Quiz!</h>
-                    <p> Your score is: {score} of {Object.keys(questions).length}</p>
-                    <p>Thank you! </p>
+                    <h2> <span>You have completed the Quiz!</span></h2>
+                    <h3> <span>Your score is: {score} of {Object.keys(questions).length}</span></h3>
+                    <h3><span>Thank you for taking the quiz! These are the answers:</span></h3>
+                    <h3><span>1: Mercury</span></h3>
+                    <h3><span>2: The Voyager 2</span> </h3>
+                    <h3><span>3: Mars</span> </h3>
+                    <h3><span>4: Saturn</span> </h3>
+                    <h3><span>5: Venus</span> </h3>
+                    <h3><span>6: Earth</span> </h3>
+                    <h3><span>7: Mercury and Venus</span> </h3>
+                    <h3><span>8: Saturn</span> </h3>
+                    <h3><span>9: Mars</span> </h3>
+                    <h3><span>10: Neptune</span> </h3>
+                    <h3><span>Hope you had fun!</span> </h3>
                 </div>
             )
          }
@@ -171,5 +185,4 @@ class Quiz extends Component {
    );
 }
 }
-
 export default Quiz;
