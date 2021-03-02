@@ -13,7 +13,6 @@ import Interact from '../components/Interact';
 import LaunchList from '../components/LaunchList';
 import LaunchDetail from '../components/LaunchDetail';
 import LaunchMap from '../components/LaunchMap';
-
 import AstronautList from '../components/AstronautList';
 import AstronautDetail from '../components/AstronautDetail';
 import AstronautChart from '../components/AstronautChart';
@@ -27,8 +26,6 @@ const AppContainer = () => {
     const [allPlanets, setAllPlanets] = useState([]);
     const [selectedPlanet, setSelectedPlanet] = useState(null)
     const [allLaunches, setAllLaunches] = useState([]);
-    const [allAstronauts, setAllAstronauts] = useState([]);
-   
     const [selectedLaunch, setSelectedLaunch] = useState(0);
     const[allAstronauts, setAllAstronauts] = useState([]);
     const [selectedAstronaut, setSelectedAstronaut] = useState(null)
@@ -71,7 +68,7 @@ const AppContainer = () => {
     useEffect (() => {
         getPicture()
         getLaunches()
-        // getAstronauts()
+        getAstronauts()
     },[]);
 
     const handleSelectedLaunch = (selectedLaunch) => {
