@@ -1,6 +1,8 @@
 import React from "react";
 import './PlanetDetail.css';
 import {Animated} from "react-animated-css";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 const PlanetDetail = ({selectedPlanet, deletePlanet}) => {
         
@@ -26,7 +28,9 @@ const PlanetDetail = ({selectedPlanet, deletePlanet}) => {
                             <li><span>Does it have rings?: {selectedPlanet.rings} </span></li>
                             <li><span>Type of planet: {selectedPlanet.type}</span> </li>
                             <li><span>Orbit period (relative to Earth): {selectedPlanet.orbitPeriod}</span> </li>
-                            <button type="button" className="delete-button" onClick={handleDeleteClick}>Delete Planet</button>
+                           <Popup trigger={<button className="delete-button">Delete Planet</button>} position="right center">
+                               <div>Are you sure you want to delete your planet? <button type="button" className="delete-button" onClick={handleDeleteClick}>Delete Planet</button></div>
+                            </Popup> 
                         </ul>
                     </div>
             </div>

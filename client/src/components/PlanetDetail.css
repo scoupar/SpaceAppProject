@@ -9,6 +9,7 @@
     margin-bottom: 50px;
 }
 .delete-button:hover {
+    font-size:medium;
     background: #2079b0;
     background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
     background-image: -moz-linear-gradient(top, #2079b0, #eb94d0);
