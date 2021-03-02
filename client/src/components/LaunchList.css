@@ -3,14 +3,6 @@
 }
 
 
-.launch-list > h1 > span {
-    color:white;
-    background-color: black;
-}
-
-.launch-list > h3 > span {
-    background-color: black;
-}
 
 .launch-select{
     width: 300px;
