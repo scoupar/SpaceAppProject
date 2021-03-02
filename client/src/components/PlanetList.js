@@ -1,7 +1,7 @@
 import React from 'react';
 import PlanetDetail from './PlanetDetail'
 import {Animated} from "react-animated-css";
-// import './PlanetDetail.css';
+import './PlanetDetail.css';
 
 const PlanetList = ({allPlanets, selectedPlanet, onPlanetSelect, createPlanet, deletePlanet}) => {
 
