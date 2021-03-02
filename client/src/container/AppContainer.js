@@ -28,9 +28,7 @@ const AppContainer = () => {
     const [selectedPlanet, setSelectedPlanet] = useState(null)
     const [allLaunches, setAllLaunches] = useState([]);
     const [allAstronauts, setAllAstronauts] = useState([]);
-   
     const [selectedLaunch, setSelectedLaunch] = useState(0);
-    const[allAstronauts, setAllAstronauts] = useState([]);
     const [selectedAstronaut, setSelectedAstronaut] = useState(null)
 
     useEffect(() => {
@@ -71,7 +69,7 @@ const AppContainer = () => {
     useEffect (() => {
         getPicture()
         getLaunches()
-        // getAstronauts()
+        getAstronauts()
     },[]);
 
     const handleSelectedLaunch = (selectedLaunch) => {
