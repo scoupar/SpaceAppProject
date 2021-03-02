@@ -70,7 +70,7 @@ const AstronautChart = ({allAstronauts}) => {
             style: {
                 color:"#F7F8FA"
             },
-            text:'Nationalities of Active Astronauts'
+            text:'WHICH COUNTRIES DO ASTRONAUTS COME FROM?'
         },
         series:[
             {   
@@ -85,6 +85,7 @@ const AstronautChart = ({allAstronauts}) => {
     }
     return(
         <div className= "chart">
+            
             <HighchartsReact highcharts = {Highcharts} options = {options}/>
           
         </div>
