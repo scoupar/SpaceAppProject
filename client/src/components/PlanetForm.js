@@ -64,7 +64,7 @@ const PlanetForm = ({createPlanet}) => {
                 <input type = "text" id = "planetName" value ={planetName} onChange = {handleNameChange} required />
                 <label htmlFor = "diameter">Diameter:</label>
                 <input type = "text" id = "diameter" value ={diameter} onChange = {handleDiameterChange} required />
-                <label htmlFor = "mass">Mass:</label>
+                <label htmlFor = "mass">Mass (relative to Earth):</label>
                 <input type = "text" id = "mass" value ={mass} onChange = {handleMassChange} required />
                 <label htmlFor = "moons">Number of moons:</label>
                 <input type = "number" id = "moons" value ={moons} onChange = {handleMoonsChange} required />
@@ -81,7 +81,7 @@ const PlanetForm = ({createPlanet}) => {
                 <option value = "Ice Giant">Ice Giant</option>
                 <option val = "Gas Giant">Gas Giant</option> 
                 </select>
-                <label htmlFor = "orbitPeriod">Orbit Period:</label>
+                <label htmlFor = "orbitPeriod">Orbit Period (relative to Earth):</label>
                 <input type = "number" id = "orbitPeriod" value ={orbitPeriod} onChange = {handleOrbitPeriodChange} required />
                 <br />
                 <select className="planet-select" id = "url" name = "url" onChange = {handleUrlChange} defaultValue = "default">
