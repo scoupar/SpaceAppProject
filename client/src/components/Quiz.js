@@ -84,7 +84,7 @@ class Quiz extends Component {
         
         }, 
         correctAnswers: {
-            1: "Mercury",
+            1: "1",
             2: "2",
             3: "3",
             4: "3",
