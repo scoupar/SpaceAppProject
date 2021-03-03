@@ -27,7 +27,7 @@ const NavBar = () => {
                     <Link to="/quiz">QUIZ</Link>
                 </li>
                 <li>
-                    <Link to="/interact">INTERACT</Link>
+                    <Link to="/interact">HELLO SPACE!</Link>
                 </li>
             </ul>
         </div>    
