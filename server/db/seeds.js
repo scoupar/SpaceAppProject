@@ -12,7 +12,7 @@ db.planets.insertMany([
         rings: "No",
         type: "Terrestrial",
         orbitPeriod: 0.24,
-        url: "https://space-facts.com/wp-content/uploads/mercury.png",
+        url: "images/mercury.png",
         funFact: "Mercury is the smallest planet in our solar system"
 
     },
@@ -24,7 +24,7 @@ db.planets.insertMany([
         rings:"No",
         type:"Terrestrial",
         orbitPeriod: 0.62,
-        url: "https://space-facts.com/wp-content/uploads/venus.png",
+        url: "images/venus.png",
         funFact: "Venus is the brightest planet in the night sky"
 
     },
@@ -36,7 +36,7 @@ db.planets.insertMany([
         rings: "Yes",
         type: "Terrestrial",
         orbitPeriod: 1,
-        url: "https://space-facts.com/wp-content/uploads/earth.png",
+        url: "images/earth.png",
         funFact: "Earth is the only planet that is not named after Greek Gods or Godesses"
 
     },
@@ -48,7 +48,7 @@ db.planets.insertMany([
         rings: "No",
         type: "Terrestrial",
         orbitPeriod: 1.88,
-        url: "https://space-facts.com/wp-content/uploads/mars.jpg",
+        url: "images/mars.png",
         funFact: "There have been more missions to Mars than any other planet and Mars is the 2nd smallest planet in our solar system"
     },
     {
@@ -59,7 +59,7 @@ db.planets.insertMany([
         rings: "Yes",
         type: "Gas Giant",
         orbitPeriod: 11.86,
-        url: "https://space-facts.com/wp-content/uploads/jupiter.png",
+        url: "images/jupiter.png",
         funFact: "Jupiter has the shortest day of all the planets - 9 hours and 55 minutes"
 
     },
@@ -71,7 +71,7 @@ db.planets.insertMany([
         rings: "Yes",
         type: "Gas Giant",
         orbitPeriod: 29.45,
-        url: "https://space-facts.com/wp-content/uploads/saturn.png",
+        url: "images/saturn.png",
         funFact: "Saturn has a moon named Titan"
 
     },
@@ -83,7 +83,7 @@ db.planets.insertMany([
         rings: "Yes",
         type: "Ice Giant",
         orbitPeriod: 164.79,
-        url: "https://space-facts.com/wp-content/uploads/neptune.png",
+        url: "images/neptune.png",
         funFact: "Neptune is the smallest Gas Giant and the furthest planet from the Sun. Named after the Roman God of the Sea"
 
     },
@@ -95,7 +95,7 @@ db.planets.insertMany([
         rings: "Yes",
         type: "Ice Giant",
         orbitPeriod: 84.02,
-        url: "https://space-facts.com/wp-content/uploads/uranus.jpg",
+        url: "images/uranus.png",
         funFact:"The voyager 2 is the only space-craft that has visited Uranus"
 
     }
