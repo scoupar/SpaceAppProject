@@ -2,6 +2,7 @@ import React from 'react';
 import './AstronautList.css';
 import {Animated} from 'react-animated-css';
 
+
 const AstronautList = ({allAstronauts, onAstronautSelect}) => {
 
 

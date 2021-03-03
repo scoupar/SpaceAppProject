@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Question from './question/Question';
+import Question from './Question/Question';
 import Answer from './answer/Answer';
 import './Quiz.css';
 import {Animated} from 'react-animated-css';
