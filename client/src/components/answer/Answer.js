@@ -12,7 +12,7 @@ const Answer = (props) => {
              props.correctAnswer === qAnswer ?
              "correct" :
              props.clickedAnswer === qAnswer ?
-             "incorrect" : ""
+             "incorrect" : " "
          }
          onClick={() => props.checkAnswer(qAnswer)}
          key={qAnswer}>

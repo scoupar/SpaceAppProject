@@ -84,7 +84,7 @@ class Quiz extends Component {
         
         }, 
         correctAnswers: {
-            1: "1",
+            1: "Mercury",
             2: "2",
             3: "3",
             4: "3",
@@ -99,6 +99,8 @@ class Quiz extends Component {
         clickedAnswer: 0,
         step: 1,
         score: 0,
+    
+    
 
         }
 
@@ -109,11 +111,13 @@ class Quiz extends Component {
                 score: score + 1,
                 correctAnswer: correctAnswers[step],
                 clickedAnswer: answer
+        
             });
         }else {
             this.setState({
                 correctAnswer: 0,
-                clickedAnswer: answer
+                clickedAnswer: answer,
+
             });
         }
 
