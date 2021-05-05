@@ -1,4 +1,7 @@
 # Hello Space!
+
+![image](./client/src/components/Header.png)
+
 Full-stack educational app built with React, Express and MongoDB. Our data is fetched from multiple external web API's as well as our own RESTful JSON API held in a MongoDB database. Implements Leaflet, Highcharts, Three &amp; Canvas libraries. Insomnia was used to test routes.
 
 Built with Renee Graham (https://github.com/ReneeNGraham) and Anna Cunningham (https://github.com/TheStylishCoder)
