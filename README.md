@@ -5,7 +5,7 @@ Built with Renee Graham (https://github.com/ReneeNGraham) and Anna Cunningham (h
 
 # Video Demo
 
-Video demno available here: 
+Video demo available here: 
 
 https://youtu.be/tW9jmAHcNuE
 
